@@ -1,0 +1,85 @@
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header__row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: 72px;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.genre-nav {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  flex: 1;
+  /* Hide the scrollbar visually but keep it scrollable — this row is a
+     horizontal "crate divider" of tabs, not a wrapping menu. */
+  scrollbar-width: none;
+}
+.genre-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.genre-nav__link {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  padding: 8px 14px;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.genre-nav__link:hover {
+  color: var(--ink);
+}
+
+.genre-nav__link.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.crate-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.crate-link__count {
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+}
+
+@media (max-width: 640px) {
+  .site-header__row {
+    gap: 16px;
+  }
+  .wordmark {
+    font-size: 1.25rem;
+  }
+}
